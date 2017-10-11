@@ -1,0 +1,28 @@
+Saber en commo esta corriendo la base de datos
+
+select name, log_mode from v$database;
+rman target SYS/ Y PASSWORD
+show all;
+
+Cambiar los días del Backup
+CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 7 DAYS;
+delete archivelog all;
+DELETE BACKUP;
+
+
+Realizar Backups
+{
+  shutdown immediate
+  startup mount
+}
+
+BACKUP AS BACKUPSET DATABASE PLUS ARCHIVELOG;
+
+ll -h
+
+Listar Backup
+
+LIST BACKUP;
+
+Correr BASE DE DATOS
+RESTORE TABLESPACE SALES;
