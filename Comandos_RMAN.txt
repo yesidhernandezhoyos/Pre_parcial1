@@ -1,3 +1,5 @@
+*PRUEBAS*
+
 Saber en commo esta corriendo la base de datos
 
 select name, log_mode from v$database;
